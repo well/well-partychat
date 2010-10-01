@@ -2,3 +2,5 @@
 ppblog
 state.xml
 bin/*
+.settings/
+.svn/
