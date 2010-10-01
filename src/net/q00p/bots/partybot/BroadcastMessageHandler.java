@@ -11,7 +11,8 @@ import net.q00p.bots.partybot.commands.Command;
  */
 public class BroadcastMessageHandler implements MessageHandler {
   private static final String NEED_HELP = "You are not in a party chat, for " +
-      "help using PartyChat, type '" + Command.HELP.getShortName() + "'";
+      "help using PartyChat, type '" + Command.HELP.getShortName() + "' " +
+      "for a list of parties, type '" + Command.PARTIES.getShortName() + "'";
 
   private static final String USER_NO_LONGER_SNOOZING =
       "%s is no longer snoozing";

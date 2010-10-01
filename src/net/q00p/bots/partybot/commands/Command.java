@@ -93,6 +93,10 @@ public enum Command {
         + "Extracts information about a URL (e.g. its title) before posting it",
         new ShareCommandHandler()),
 
+  PARTIES(Pattern.compile("#parties"), 
+	    "#parties - show all the open parties!",
+	    new PartiesCommandHandler()),      
+        
   // Hidden commands
       
   SAVE_STATE(Pattern.compile("#(save-state)(\\s+\\S+)*",
