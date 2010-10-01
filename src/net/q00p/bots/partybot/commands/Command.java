@@ -22,84 +22,84 @@ import java.util.regex.Pattern;
  */
 public enum Command {
 
-  CREATE(Pattern.compile("/(make|create|start)\\s+#?(\\S*)\\s*(\\S*)",
-      Pattern.CASE_INSENSITIVE), "/create chat_name [optional_password]"
+  CREATE(Pattern.compile("#(make|create|start)\\s+#?(\\S*)\\s*(\\S*)",
+      Pattern.CASE_INSENSITIVE), "#create chat_name [optional_password]"
       + " - creates a new party chat. "
       + "If you provide a password, then other users must give this "
       + "password to enter the chat.", new CreateCommandHandler()),
 
-  JOIN(Pattern.compile("/(sub|subscribe|join|enter)\\s+#?(\\S*)\\s*(\\S*)",
-      Pattern.CASE_INSENSITIVE), "/join chat_name [password]"
+  JOIN(Pattern.compile("#(sub|subscribe|join|enter)\\s+#?(\\S*)\\s*(\\S*)",
+      Pattern.CASE_INSENSITIVE), "#join chat_name [password]"
       + " - join an existing party chat. If the "
       + "chat has a password, you must give the password to enter.",
       new SubscribeCommandHandler()),
 
-  STATUS(Pattern.compile("/(status)(\\s+\\S+)*"), "/status"
+  STATUS(Pattern.compile("#(status)(\\s+\\S+)*"), "#status"
       + " - display the party chat name and your alias",
       new StatusCommandHandler()),
 
-  LIST(Pattern.compile("/(list|members)(\\s+\\S+)*"), "/list"
+  LIST(Pattern.compile("#(list|members)(\\s+\\S+)*"), "#list"
       + " - list the current members of the party chat you are in",
       new ListCommandHandler()),
 
-  ALIAS(Pattern.compile("/(alias|aka)\\s*(\\S*)"), "/alias [name]"
+  ALIAS(Pattern.compile("#(alias|aka)\\s*(\\S*)"), "#alias [name]"
       + " - give yourself an alias; if you do not specify a name,"
       + " your current alias is removed", new AliasCommandHandler()),
 
-  SCORE(Pattern.compile("/score(\\s+)?(.*)"), "/score [name]"
+  SCORE(Pattern.compile("#score(\\s+)?(.*)"), "#score [name]"
       + " - get the score for a name. if no name is given, " 
       + "then all scores are printed", new ScoreCommandHandler()),
 
-  ME(Pattern.compile("/(me)\\s+(.*)"), "/me message" 
+  ME(Pattern.compile("#(me)\\s+(.*)"), "#me message" 
       + " - say something in the third person", new MeCommandHandler()),
 
-  REASONS(Pattern.compile("/reasons(\\s+)?(.*)"), "/reasons [name]"
-      + " - similar to /score, except it also returns the reasons "
-      + " for increments/decrements", new ReasonsCommandHandler()),
+  REASONS(Pattern.compile("#reasons(\\s+)?(.*)"), "#reasons [name]"
+      + " - similar to #score, except it also returns the reasons "
+      + " for increments#decrements", new ReasonsCommandHandler()),
 
-  EXIT(Pattern.compile("/(unsub|unsubscribe|leave|exit)\\s*#?(\\S*)",
-      Pattern.CASE_INSENSITIVE), "/exit"
+  EXIT(Pattern.compile("#(unsub|unsubscribe|leave|exit)\\s*#?(\\S*)",
+      Pattern.CASE_INSENSITIVE), "#exit"
       + " - leave the party chat you are currently in",
       new ExitCommandHandler()),
 
-  HELP(Pattern.compile("/(\\?|help)(\\s+\\S+)*", Pattern.CASE_INSENSITIVE),
-      "/help" + " - offer some instructions on how to use PartyChat and "
-          + "directs users to /commands", new HelpCommandHandler()),
+  HELP(Pattern.compile("#(\\?|help)(\\s+\\S+)*", Pattern.CASE_INSENSITIVE),
+      "#help" + " - offer some instructions on how to use PartyChat and "
+          + "directs users to #commands", new HelpCommandHandler()),
 
-  COMMANDS(Pattern.compile("/(commands|actions|instructions)(\\s+\\S+)*",
-      Pattern.CASE_INSENSITIVE), "/commands - displays this menu",
+  COMMANDS(Pattern.compile("#(commands|actions|instructions)(\\s+\\S+)*",
+      Pattern.CASE_INSENSITIVE), "#commands - displays this menu",
       new CommandsCommandHandler()),
 
-  SNOOZE(Pattern.compile("/(snooze|sleep)\\s*(.*)"), "/snooze time" 
+  SNOOZE(Pattern.compile("#(snooze|sleep)\\s*(.*)"), "#snooze time" 
       + " - ignore this partychat for the specified amount of time. E.g." 
       + "\"snooze 1h\" or \"snooze 15m\"",
       new SnoozeCommandHandler()),
 
-  WHOIS(Pattern.compile("/(whois|describe)\\s+(\\S*)"), "/whois name" 
+  WHOIS(Pattern.compile("#(whois|describe)\\s+(\\S*)"), "#whois name" 
       + " - display information about this party chat user/alias",
       new WhoisCommandHandler()),
 
-  WHISPER(Pattern.compile("/(whisper|msg)\\s+(\\S*)\\s+(\\S.*)"), 
-      "/whisper name message - send a private message to another user",
+  WHISPER(Pattern.compile("#(whisper|msg)\\s+(\\S*)\\s+(\\S.*)"), 
+      "#whisper name message - send a private message to another user",
       new WhisperCommandHandler()),	
 
-  MAIL(Pattern.compile("/mail(\\s+\\S+)*"),
-      "/mail - display all the email addresses of the current party chat, so " +
+  MAIL(Pattern.compile("#mail(\\s+\\S+)*"),
+      "#mail - display all the email addresses of the current party chat, so " +
       "that they can be copied and pasted into an email program",
       new MailCommandHandler()),
       
-  SHARE(Pattern.compile("/share\\s+(\\S+)(\\s+)?(\\S.+)?"), 
-        "/share url [annotation] - Shares an URL with the party chat. "
+  SHARE(Pattern.compile("#share\\s+(\\S+)(\\s+)?(\\S.+)?"), 
+        "#share url [annotation] - Shares an URL with the party chat. "
         + "Extracts information about a URL (e.g. its title) before posting it",
         new ShareCommandHandler()),
 
   // Hidden commands
       
-  SAVE_STATE(Pattern.compile("/(save-state)(\\s+\\S+)*",
+  SAVE_STATE(Pattern.compile("#(save-state)(\\s+\\S+)*",
       Pattern.CASE_INSENSITIVE), "if you can use this, then you know",
       new SaveStateCommandHandler(), true),
 
-  STATS(Pattern.compile("/stats", Pattern.CASE_INSENSITIVE), 
+  STATS(Pattern.compile("#stats", Pattern.CASE_INSENSITIVE), 
       "Stats about the partychat service",
       new StatsCommandHandler(), true),
 
@@ -128,7 +128,7 @@ public enum Command {
 
   /** @return the short name of the command, such as "/score" */
   public String getShortName() {
-    return "/" + this.name().toLowerCase();
+    return "#" + this.name().toLowerCase();
   }
   
   public String run(
@@ -150,7 +150,7 @@ public enum Command {
    * otherwise, return null.
    */
   public static Command isCommand(String content) {
-    if (content == null || content.charAt(0) != '/') {
+    if (content == null || (content.charAt(0) != '/' && content.charAt(0) != '#')) {
       return null;
     }
     // TODO(bolinfest): implement a faster lookup using a regex

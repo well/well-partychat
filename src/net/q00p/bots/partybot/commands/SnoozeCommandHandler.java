@@ -10,7 +10,7 @@ import java.util.regex.Matcher;
 
 public class SnoozeCommandHandler extends PartyLineCommandHandler {
 
-  private static final String NOT_CURRENTLY_SNOOZING = "You are not currently snoozing. To start snoozing, try /snooze 10m";
+  private static final String NOT_CURRENTLY_SNOOZING = "You are not currently snoozing. To start snoozing, try #snooze 10m";
   private static final String SNOOZE_INCORRECT_TIME = "The snooze time you specified could not be parsed.";
   private static final String SNOOZE_SEE_YOU_IN = "ok, see you in %s";
 

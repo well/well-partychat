@@ -94,10 +94,7 @@ mbolin
 
 368
 
-lib
-dir
-
-src
+.settings
 dir
 
 build-user.xml
@@ -105,7 +102,7 @@ file
 
 
 
-
+delete
 2010-10-01T02:59:20.000000Z
 4372de2249fc5e01a57486b4d27e68b4
 2006-02-03T02:58:18.000000Z
@@ -134,15 +131,12 @@ ak_
 
 86
 
-.settings
-dir
-
 build.xml
 file
 
 
 
-
+delete
 2010-10-01T02:59:20.000000Z
 3d9dbf3a998d116848da88956604ceae
 2007-10-28T21:45:47.000000Z
@@ -170,4 +164,10 @@ mihaiparparita
 
 
 1845
+
+lib
+dir
+
+src
+dir
 

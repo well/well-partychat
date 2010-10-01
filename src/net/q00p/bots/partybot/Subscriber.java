@@ -34,7 +34,7 @@ public class Subscriber implements Serializable {
   }
   
   private static Map<UserBotKey, Subscriber> cache = Maps.newHashMap(); 
-  private static final String ALIAS_TEMPLATE = "\"%s\"";
+  private static final String ALIAS_TEMPLATE = "[%s]";
 
   public static Subscriber get(User user, String botScreenName) {
     UserBotKey key = new UserBotKey(user, botScreenName);
@@ -107,7 +107,12 @@ public class Subscriber implements Serializable {
     if (alias != null) {
       return noFormatting ? alias : String.format(ALIAS_TEMPLATE, alias);
     }
-    else return user.getName();
+    else
+    {
+    	String n = user.getName();
+    	n = (n.split("@"))[0];
+    	return n;
+    }
   }
 
   @Override
