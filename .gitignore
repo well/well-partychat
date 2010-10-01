@@ -4,3 +4,5 @@ state.xml
 bin/*
 .settings/
 .svn/
+.classpath
+.project
