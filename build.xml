@@ -26,10 +26,10 @@
   <target name="dist" depends="compile"
         description="generate the distribution" >
     <!-- Create the distribution directory -->
-    <mkdir dir="${dist}/lib"/>
+    <!-- <mkdir dir="${dist}/lib"/> -->
 
     <!-- Put everything in ${build} into the MyProject-${DSTAMP}.jar file -->
-    <jar jarfile="${dist}/lib/PartyChat.jar" basedir="${build}"/>
+    <!-- <jar jarfile="${dist}/lib/PartyChat.jar" basedir="${build}"/> -->
   </target>
 
   <target name="clean"
