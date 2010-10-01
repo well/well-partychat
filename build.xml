@@ -1,0 +1,41 @@
+<project name="PartyChat" default="dist" basedir=".">
+    <description>
+        Built PartyChat into a Jar
+    </description>
+  <!-- set global properties for this build -->
+  <property name="src" location="src"/>
+  <property name="build" location="bin"/>
+  <property name="dist"  location="dist"/>
+
+	
+  <target name="init">
+    <!-- Create the time stamp -->
+    <tstamp/>
+    <!-- Create the build directory structure used by compile -->
+    <mkdir dir="${build}"/>
+  </target>
+
+  <target name="compile" depends="init"
+        description="compile the source " >
+    <!-- Compile the java code from ${src} into ${build} -->
+      	
+    <javac classpath= "lib/smack.jar:lib/smackx-debug.jar:lib/smackx-jingle.jar:lib/smackx.jar:lib/google-collect-1.0-rc2.jar:lib/httpclient-4.0.jar:lib/httpcore-4.0.1.jar:lib/commons-logging-1.1.1.jar:lib/commons-lang-2.4.jar" 
+    		srcdir="${src}" destdir="${build}"/>
+  </target>
+
+  <target name="dist" depends="compile"
+        description="generate the distribution" >
+    <!-- Create the distribution directory -->
+    <mkdir dir="${dist}/lib"/>
+
+    <!-- Put everything in ${build} into the MyProject-${DSTAMP}.jar file -->
+    <jar jarfile="${dist}/lib/PartyChat.jar" basedir="${build}"/>
+  </target>
+
+  <target name="clean"
+        description="clean up" >
+    <!-- Delete the ${build} and ${dist} directory trees -->
+    <delete dir="${build}"/>
+    <delete dir="${dist}"/>
+  </target>
+</project>
