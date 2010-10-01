@@ -1,0 +1,42 @@
+this is well.ca's partychat.
+
+DESCRIPTION
+it is works like this: party chat is a partychat implementation that can work inside your firewall.
+
+we added a few features to partychat for well.ca as well.
+
+we use it to keep teams or the whole company connected.
+
+QUICKSTART
+to get partychat up and running quickly follow these steps (you need java and ant):
+
+1. create an account on your jabber server for partychat to use (e.g. partybot@jabber.yourserver.com)
+
+2. run:
+>> git clone git://github.com/well/well-partychat.git
+>> cd well-partychat
+>> ant
+>> ./run.sh partychat partybot@jabber.yourserver.com password
+
+(replace the last two arguments with the username and password you created in step 1)
+
+
+TO PULL
+git clone git://github.com/well/well-partychat.git
+
+TO BUILD
+the best way to build is to use ant. you should be able to build by running:
+
+>> ant
+
+from the command line which will invoke the build.xml ant file
+
+TO RUN
+best way to run it is to run the run.sh shell script
+
+it takes three arguments:
+1) the name of the bot (arbitrary)
+2) the username and server of the jabber account the bot will use (e.g. partybot-wellca@jabber.yourcompany.com)
+3) the password for the above account
+
+
