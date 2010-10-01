@@ -1,0 +1,10 @@
+K 10
+svn:ignore
+V 45
+bin
+real_build.xml
+ppblog
+botlog_*
+state.xml
+
+END

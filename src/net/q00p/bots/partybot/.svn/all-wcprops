@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/87/trunk/partychat/src/net/q00p/bots/partybot
+END
+MessageHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/79/trunk/partychat/src/net/q00p/bots/partybot/MessageHandler.java
+END
+LineManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/80/trunk/partychat/src/net/q00p/bots/partybot/LineManager.java
+END
+Subscriber.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/74/trunk/partychat/src/net/q00p/bots/partybot/Subscriber.java
+END
+SearchReplaceMessageHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/79/trunk/partychat/src/net/q00p/bots/partybot/SearchReplaceMessageHandler.java
+END
+PartyBot.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/86/trunk/partychat/src/net/q00p/bots/partybot/PartyBot.java
+END
+BroadcastMessageHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/81/trunk/partychat/src/net/q00p/bots/partybot/BroadcastMessageHandler.java
+END
+SubscriberHistory.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/40/trunk/partychat/src/net/q00p/bots/partybot/SubscriberHistory.java
+END
+MessageResponder.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/79/trunk/partychat/src/net/q00p/bots/partybot/MessageResponder.java
+END
+PartyLine.java
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/6/trunk/partychat/src/net/q00p/bots/partybot/PartyLine.java
+END
+PlusPlusBot.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/87/trunk/partychat/src/net/q00p/bots/partybot/PlusPlusBot.java
+END
